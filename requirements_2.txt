@@ -1,0 +1,9 @@
+transformers==4.25.1
+moviepy
+av
+xformers
+gradio
+timm
+scikit-learn 
+open_clip_torch==2.22.0
+kornia
