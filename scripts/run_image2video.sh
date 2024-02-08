@@ -7,6 +7,8 @@ prompt_file="prompts/test_prompts.txt"
 condimage_dir="inputs"
 res_dir="newResults"
 
+python3 uploadModel.py
+
 python3 scripts/evaluation/inference.py \
 --seed 123 \
 --mode 'i2v' \
