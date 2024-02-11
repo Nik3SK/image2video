@@ -1,19 +1,20 @@
 version: "3"
 
-services:
-  img2video:
-    command: "sh scripts/run_image2video.sh"
-    build: .
-    volumes:         
-          - ./inputs:/usr/src/code/inputs
-          - ./results/i2v_512_test:/usr/src/code/newResults
-
 networks:
   default:
     name: my-custom-network
     external: true
 
-
+services:
+  img2video:
+    # command: "sh scripts/run_image2video.sh"
+    command: "/bin/bash"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    build: .
+    volumes:         
+          - ./inputs:/usr/src/code/inputs
+          - ./results/i2v_512_test:/usr/src/code/newResults
     deploy:
       resources:
         reservations:
@@ -21,4 +22,3 @@ networks:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
-
