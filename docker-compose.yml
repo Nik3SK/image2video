@@ -8,6 +8,10 @@ services:
           - ./inputs:/usr/src/code/inputs
           - ./results/i2v_512_test:/usr/src/code/newResults
 
+networks:
+  default:
+    name: my-custom-network
+    external: true
 
 
     deploy:
